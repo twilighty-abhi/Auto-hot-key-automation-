@@ -204,20 +204,7 @@ Send, {Enter 2}
 
 ;Text Expander 
 
-	::@111:: abhiramnj@gmail.com ;enter personal email address 
-	return
-
-	::@222:: abhiztechz@gmail.com ;enter Private email address 
-	return
-
-	::@333:: info.abhiztechz@gmail.com ;enter useless email address 
-	return
-
-	::ahk:: auto hot key
-	return
-
-	::abh:: Abhiram N J
-	::Twa:: Twilighty Abhi
+	
 	::HBD:: Wishing you a Happy Birthday💖💖
 	::gn:: Good Night💫💖
 	::gm:: morN'❤
