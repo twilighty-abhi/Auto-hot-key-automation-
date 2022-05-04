@@ -1,8 +1,4 @@
-;
-; AutoHotkey Version: 1.x
-; Language:       English
-; Platform:       Win9x/NT
-; Author:         Jack Dunning, ceeditor@computoredge.com
+
 ;
 ; Script Function: Barebones To-Do List App
 ; This is the color version of ToDoList.ahk from the AutoHotkey column dated April 31, 2014	
