@@ -1,8 +1,8 @@
-﻿
+
 /*
  AutoHotkey Version: 2.0.x
  Language:       English
- Platform:       Win 10 
+ Platform:       Win 10 /win 11
  Author:         Twilighty Abhi
 
  Script Function:
@@ -68,7 +68,28 @@ QuickToolTip(text, delay)
 
 ;XButton1::#+s
 
+/*
+;spacebar rapid fire
+#MaxThreadsperHotkey 2
+~space::
 
+Previouskey:= !PreviousKey
+
+loop
+{
+
+if PreviousKey
+{
+sleep, 0
+send, {space}
+}
+else
+
+break
+
+}
+return
+*/
 
 ;WEBSITE SHOTCUTS
 ^y::
@@ -78,7 +99,7 @@ QuickToolTip("Youtube Vanney...", 1800)
 
 ^g::
 Run https://www.google.co.in/ ; opens google
-;QuickToolTip("Opening Brilliant...", 2500)
+;QuickToolTip("Opening Google...", 2500)
  return
 
 !f::
@@ -87,9 +108,9 @@ QuickToolTip("Opening Speedcheck...", 1000)
 	return
 
 !g::
-Run https://www.google.com/ ;open google
-QuickToolTip("Google Maaman Opening ...", 2000)
-;Control g does ssomething.
+Run https://scholar.google.com/scholar? ;open google scholar for research type of files and help
+QuickToolTip("Google buddy Opening ...", 2000)
+;Alt g opens up google scholar.
 	return
 
 
@@ -97,10 +118,15 @@ QuickToolTip("Google Maaman Opening ...", 2000)
 ;------------------------------------------------------------------------------------------------------------
 ;------------------------------------------------------------------------------------------------------------
 
+;******************************************************************************
+;			           RUN APPLICATIONS
+;******************************************************************************
 
-;RUN APPLICATIONS
 
-!c::
+
+
+
+!x::
 
 	if WinExist("ahk_exe msedge.exe")
 		if WinActive()
@@ -109,8 +135,8 @@ QuickToolTip("Google Maaman Opening ...", 2000)
 			WinActivate
 	else
 		{
-			Run C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Edge.lnk ;opens Edge
-			QuickToolTip("Edge is Rising ...", 2000)
+			Run C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Edge.lnk ;opens Edge || change the directry to yours.
+			QuickToolTip("Edge is Rising ...", 1500)
 		}
 	
 	return
@@ -123,20 +149,20 @@ QuickToolTip("Chill With Spotify ...", 4000)
 	return 
 	
 ;open whatsapp
-!w:: Run C:\Users\Twilighty Abhi\Desktop\Scripts\Shotcuts\WhatsApp - Shortcut.lnk ; opens whatsapp
+!w:: Run C:\Users\a\Desktop\Scripts\Shotcuts\WhatsApp - Shortcut.lnk ; opens whatsapp || change the directry to yours.
 	return
 
 ;Open whiteboard
-!b::Run C:\Users\Twilighty Abhi\Desktop\Scripts\Shotcuts\Microsoft Whiteboard - Shortcut.lnk ; opens whiteboard
+!b::Run C:\Users\a\Desktop\Scripts\Shotcuts\Microsoft To Do - Shortcut.lnk ; opens microsoft todo list || change the directry to yours.
 return
 
 
 
-;open To do and calendar app
+;open Todoist and Morgen calendar app
 !t:: 	
 	{
-		Run C:\Users\Twilighty Abhi\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Todoist.lnk ;opens Todoist
-	 	Run C:\Users\Twilighty Abhi\Desktop\Scripts\Shotcuts\Morgen - Shortcut.lnk ; opens morgen
+		Run C:\Users\a\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Todoist.lnk ;opens Todoist || change the directry to yours.
+	 	Run C:\Users\a\Desktop\Scripts\Shotcuts\Morgen.lnk ; opens morgen || change the directry to yours.
 		QuickToolTip("To Dooooo ...", 1000)
  	}	
 	return
@@ -145,7 +171,7 @@ return
 
 
 ;opens the  music player
-!m:: Run C:\Users\Twilighty Abhi\Desktop\Scripts\Shotcuts\Groove Music - Shortcut.lnk
+!m:: Run C:\Users\a\Desktop\Scripts\Shotcuts\Groove Music - Shortcut.lnk  ;change the directry to yours.
 	return
 
 
@@ -153,7 +179,11 @@ return
 
 ;Mouse butoon as tab switcher
 ;use this for tab switching
-XButton2:: !Tab
+XButton1:: !Tab
+
+
+
+
 
 
 
@@ -193,7 +223,154 @@ Send, {Enter 2}
 ;------------------------------------------------------------------------------------------------------------
 ;------------------------------------------------------------------------------------------------------------
 
+;******************************************************************************
+;			Computer information
+;******************************************************************************
+::]myid::
+SendInput %A_UserName%
+Return
 
+::]myip::
+SendInput %A_IPAddress1%
+Return
+
+::]mycomp::
+SendInput %A_ComputerName%
+Return
+
+
+
+
+
+
+;******************************************************************************
+;			Date/Time Stamps
+;******************************************************************************
+::]d::
+FormatTime, CurrentDate,, M/d/yyyy
+SendInput %CurrentDate%
+Return
+
+::]dl::
+FormatTime, CurrentDate,, dddd, MMMM d, yyyy
+SendInput %CurrentDate%
+Return
+
+::]dc::
+FormatTime, CurrentDate,, yyyy_MM_dd
+SendInput %CurrentDate%
+Return
+
+::]d1::
+FormatTime, CurrentDate,, M-d-yyyy
+SendInput %CurrentDate%
+Return
+
+::]d2::
+FormatTime, CurrentDateTime,, d-MMM-yyyy
+SendInput %CurrentDateTime%
+Return
+
+::]d3::
+FormatTime, CurrentDateTime,, yyyyMMdd
+SendInput %CurrentDateTime%
+Return
+
+::]d4::
+FormatTime, CurrentDateTime,, MMM-d-yyyy
+SendInput %CurrentDateTime%
+Return
+
+::]d5::
+FormatTime, CurrentDateTime,, M.d.yyyy
+SendInput %CurrentDateTime%
+Return
+
+::]d6::
+FormatTime, CurrentDateTime,, MM/dd/yyyy
+SendInput %CurrentDateTime%
+Return
+
+::]d7::
+FormatTime, CurrentDateTime,, yyyy-MM-dd
+SendInput %CurrentDateTime%
+Return
+
+::]d8::
+FormatTime, CurrentDateTime,, dMMMyyyy
+SendInput %CurrentDateTime%
+Return
+
+::]d9::
+FormatTime, CurrentDateTime,, ddMMMyyyy
+SendInput %CurrentDateTime%
+Return
+
+::]ymd::
+FormatTime, CurrentDateTime,, yyyy-MM-dd
+SendInput %CurrentDateTime%
+Return
+
+::]t::
+FormatTime, Time,, h:mm tt
+sendinput %Time%
+Return
+
+::]t1::
+FormatTime, Time,, H:mm
+sendinput %Time%
+Return
+
+::]dt::
+FormatTime, CurrentDateTime,, M/d/yyyy h:mm tt  
+SendInput %CurrentDateTime%
+Return
+
+::]dt1::
+FormatTime, CurrentDateTime,, M-d-yyyy h:mm tt  
+SendInput %CurrentDateTime%
+Return
+
+::]dt2::
+FormatTime, CurrentDateTime,, d-MMM-yyyy H:mm
+SendInput %CurrentDateTime%
+Return
+
+::]dt3::
+FormatTime, CurrentDateTime,, MMM-dd-yyyyThh:mm:ss
+SendInput %CurrentDateTime%
+Return
+
+::]dt4::
+FormatTime, CurrentDateTime,, MMM-dd-yyyy hh:mm:ss
+SendInput %CurrentDateTime%
+Return
+
+::]dtl::
+FormatTime, CurrentDate,, dddd, MMMM d, yyyy h:mm tt
+SendInput %CurrentDate%
+Return
+
+^!PrintScreen::		; CTRL + ALT + Print Screen
+   FormatTime, xx,, dddd, MMMM d, yyyy ; This is one type of the date format
+   FormatTime, zz,, h:mm tt ; This is one type of the time format
+   SendInput, %xx% %zz%
+Return
+
+
+;******************************************************************************
+;			Message Box Greeting - Current Date and Time
+;******************************************************************************
+
+::]curdt::
+FormatTime, DateTime,, dddd, M/d/yyyy  h:mm tt
+Msgbox,
+(
+Hello Twilighty Abhi
+Today is %DateTime%
+)
+clipboard = %DateTime%
+Return
 
 
 ;------------------------------------------------------------------------------------------------------------
@@ -204,10 +381,34 @@ Send, {Enter 2}
 
 ;Text Expander 
 
+	::em1::<email1> ;enter personal email address 
+	return
+
+	::em2::<email2> ;enters college email address 
+	return
+
+	::em3::<email3> ;enter useless email address 
+	return
+
 	
-	::HBD:: Wishing you a Happy Birthday💖💖
-	::gn:: Good Night💫💖
-	::gm:: morN'❤
+
+	::abh::Abhiram N J
+	::Twa::Twilighty Abhi
+	::HBD::Wishing you a Happy Birthday
+	::gn::Good Night
+	::gm::Good Morning
+	::intro1::I'm Abhiram N J Second Yr CSE student at College of engineering Karunagapally
+	
+	;Social link Expander
+	::]twitter::https://twitter.com/TwilightyAbhi
+	::]instagram::https://www.instagram.com/abhiramhhh/
+	::]polywork::https://www.polywork.com/twilighty_abhi
+	::]peerlist::https://peerlist.io/abhiramnj
+	::]linkedin::https://www.linkedin.com/in/abhiram-n-j/
+	::]whatsapp::https://wa.me/919497704406
+	::]portfolio::https://www.abhiramnj.live
+	::]github::https://github.com/twilighty-abhi
+
 	;::formalmailopener:: 
 
 
@@ -358,7 +559,8 @@ MouseIsOver(WinTitle)
 ; oh just kidding, they are in the TO DO section... they don't actually exist...
 
 
-
+;trial area
+!h::MouseClick, left,,, 5
 
 ;------------------------------------------------------------------------------------------------------------
 ;------------------------------------------------------------------------------------------------------------
