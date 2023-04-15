@@ -13,7 +13,7 @@ Numpad0:: !Tab
 return
 Numpad1:: MouseClick
 return
-/*Numpad2::
+Numpad2::
 	sleep, 100
 	send {PrintScreen}
 	sleep, 500
@@ -37,7 +37,7 @@ return
 	Send, {enter}
 	Sleep, 300
 	}
-	*/
+	
 	
 return
 Numpad3::#d

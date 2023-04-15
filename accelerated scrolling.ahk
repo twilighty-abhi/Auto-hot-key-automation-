@@ -11,7 +11,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #NoEnv
 ;#NoTrayIcon
 #SingleInstance
-#MaxHotkeysPerInterval 120
+#MaxHotkeysPerInterval 120000
 
 Process, Priority, , H
 SendMode Input
@@ -30,11 +30,11 @@ timeout := 600
 ; If you scroll a long distance in one session, apply additional boost factor.
 ; The higher the value, the longer it takes to activate, and the slower it accumulates.
 ; Set to zero to disable completely. Default: 30.
-boost := 60
+boost :=60
 
 ; Spamming applications with hundreds of individual scroll events can slow them down.
 ; This sets the maximum number of scrolls sent per click, i.e. max velocity. Default: 60.
-limit := 60
+limit := 600000
 
 ; Runtime variables. Do not modify.
 distance := 0
